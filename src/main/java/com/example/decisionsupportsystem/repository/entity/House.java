@@ -22,7 +22,7 @@ public class House {
     String districtUuid;
     @Field("room_qty")
     Integer roomQty;
-    @Field("unit_rea")
+    @Field("unit_area")
     Integer unitArea;
     @Field("has_elevator")
     Boolean hasElevator;
