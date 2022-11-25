@@ -7,7 +7,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
-import java.time.ZonedDateTime;
+import java.util.Date;
 
 @Document("event_log")
 @Getter
@@ -24,5 +24,5 @@ public class EventLog {
     @Field("event_type")
     String event;
     @Field("create_timestamp")
-    String createdAt;
+    Date createdAt;
 }

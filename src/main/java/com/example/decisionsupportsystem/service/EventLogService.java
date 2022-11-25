@@ -6,8 +6,7 @@ import com.example.decisionsupportsystem.repository.entity.EventLog;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.time.ZoneOffset;
-import java.time.ZonedDateTime;
+import java.util.Date;
 
 @Service
 @RequiredArgsConstructor
@@ -20,7 +19,7 @@ public class EventLogService {
                 .itemId(dto.getItemId())
                 .userId(dto.getUserId())
                 .event(dto.getEvent())
-                .createdAt(ZonedDateTime.now(ZoneOffset.UTC).toString()).build();
+                .createdAt(new Date()).build();
         return repository.insert(event);
     }
 

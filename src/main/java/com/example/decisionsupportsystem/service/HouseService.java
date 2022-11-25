@@ -18,7 +18,7 @@ public class HouseService {
     }
 
     public List<House> getAllHouse() {
-        return houseRepository.findAll();
+        return houseRepository.findAll(15);
     }
 
 }
