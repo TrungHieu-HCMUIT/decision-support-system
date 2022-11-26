@@ -6,6 +6,7 @@ import com.example.decisionsupportsystem.repository.entity.Recommendation;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.Collections;
 import java.util.List;
 
 @Service
@@ -17,9 +18,12 @@ public class RecommendationService {
 
     public List<House> getRecommendation(String userId) {
         Recommendation recommendation = repository.getRecommendationByUserId(userId);
-        return recommendation.getHouseIds().stream()
-                .map(houseService::getHouse)
-                .toList();
+        if (recommendation != null) {
+            return recommendation.getHouseIds().stream()
+                    .map(houseService::getHouse)
+                    .toList();
+        }
+        return Collections.emptyList();
     }
 
 }

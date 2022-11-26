@@ -8,16 +8,14 @@ import org.springframework.data.mongodb.core.mapping.Field;
 
 import java.util.List;
 
-@Document("recommendation")
+@Document("top_house")
 @Getter
 @Setter
-public class Recommendation {
+public class TopHouse {
     @Id
     String id;
 
+    @Field("top_items")
+    List<String> topItems;
 
-    @Field("user_id")
-    String userId;
-    @Field("house_ids")
-    List<String> houseIds;
 }

@@ -26,4 +26,10 @@ public class HouseController extends BaseController {
         var result = service.getAllHouse();
         return successResponse(result);
     }
+
+    @GetMapping("top-houses")
+    ResponseEntity<Object> getTopHouses() {
+        var result = service.getTopHouse();
+        return successResponse(result);
+    }
 }
